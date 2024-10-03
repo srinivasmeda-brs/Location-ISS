@@ -3,17 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locate ISS on Map</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>ISS Tracker</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Current Location of the ISS</h1>
-    <button onclick="getISSLocation()">Get ISS Location</button>
+    <div id="header">
+        <h1>International Space Station (ISS) Tracker</h1>
+        <p>Track the current location, altitude, speed, and visibility of the ISS in real-time.</p>
+    </div>
+
     <div id="map"></div>
-    <div id="location"></div>
-    
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="assets/js/script.js"></script>
+
+    <div id="controls">
+        <div class="info-box">
+            <strong>Current ISS Location:</strong>
+            <p id="iss_location">Loading...</p>
+        </div>
+        <div class="info-box">
+            <strong>Latitude:</strong>
+            <p id="latitude">Loading...</p>
+        </div>
+        <div class="info-box">
+            <strong>Longitude:</strong>
+            <p id="longitude">Loading...</p>
+        </div>
+        <div class="info-box">
+            <strong>Altitude:</strong>
+            <p id="altitude">Loading...</p>
+        </div>
+        <div class="info-box">
+            <strong>Speed:</strong>
+            <p id="speed">Loading...</p>
+        </div>
+        <div class="info-box">
+            <strong>Visibility:</strong>
+            <p id="visibility">Loading...</p>
+        </div>
+        <div class="info-box">
+            <strong>Local Time:</strong>
+            <p id="localTime">Loading...</p>
+        </div>
+        <div class="info-box">
+            <strong>UTC Time:</strong>
+            <p id="utcTime">Loading...</p>
+        </div>
+        <div>
+            <label for="iss_center">Center ISS on map: </label>
+            <input type="checkbox" id="iss_center" checked>
+        </div>
+    </div>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <script src = 'assets/js/script.js'></script>
 </body>
 </html>

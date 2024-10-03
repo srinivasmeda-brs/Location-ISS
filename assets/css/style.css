@@ -1,56 +1,98 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    text-align: center;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#header {
+    text-align: center;
     padding: 20px;
+    background-color: #1A4B84;
+    color: white;
+    border-bottom: 4px solid #007acc;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #3a86ff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
 }
 
 #map {
-    height: 500px; /* Larger map height */
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    height: 500px;
     margin: 20px auto;
-    border: 2px solid #ddd;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border: 2px solid #1A4B84;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth transition effect */
 }
 
-button {
-    background-color: #3a86ff;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    cursor: pointer;
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-box {
+    background-color: #e7f3ff;
+    border: 1px solid #1A4B84;
+    padding: 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-bottom: 20px;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.2s; /* Animation on hover */
 }
 
-button:hover {
-    background-color: #2657a3;
-    transform: scale(1.05);
+.info-box:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
 }
 
-button:active {
-    transform: scale(0.98);
-}
-
-button:focus {
-    outline: none;
-}
-
-#location {
+#iss_center {
+    display: block;
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: #444;
+}
+
+.info-box strong {
+    font-size: 1.2em;
+    color: #1A4B84;
+}
+
+#iss_center {
+    margin-top: 15px;
+    transform: translateY(5px); /* Align the checkbox with the label */
+}
+
+@keyframes moveMarker {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.marker {
+    width: 30px;
+    height: 30px;
+    background-color: #FF5733; /* Custom color for the marker */
+    border-radius: 50%;
+    border: 2px solid white;
 }
